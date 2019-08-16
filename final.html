@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<title>Defense Against the Dark Arts Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<div class="w3-content" style="max-width:1400px">
+
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>Final Write Up</b></h1>
+  <p>Welcome to the page of <span class="w3-tag">Alexandra Carper</span></p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <hr>
+
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <div class="w3-container">
+      <h3><b>Final Write Up</b></h3>
+    </div>
+
+    <div class="w3-container">
+      
+<div class="w3-container">
+      <h5>Final <span class="w3-opacity">August 15, 2019</span></h5>
+      <img src="1.jpg">
+      <p>The first thing I did was navigate to the Hack the Box website. I scrolled to the bottom and clicked the “Join” button to try to create an account. </p>
+      <img src="2.jpg">
+      <p>After clicking “Join”, I was brought to a page that wanted an invite code to continue. I did not see anything else within the page, so I decided to inspect the page with the Chrome Web Developer tools. Within the tools I saw a script for /js/inviteapi.min.js that looked like it might be able to help me get an invite code. So, I typed this URL into the navigation bar and hit Enter. </p>
+      <img src="3.jpg">
+      <p>Typing this URL into the navigation bar brought me to a page with code for the script. Examining the page, I saw a portion that looked like a function for “makeInviteCode”, which I was curious about. After examining the page further, I decided to navigate to the previous page to see if this was a function within the script.</p>
+      <img src="4.jpg">
+      <p>When I navigated back to the previous page, I opened the Console within the Web Developer Tools and typed in “makeInviteCode”. This did not result in anything I was looking for, so I tried typing it in as a function call with the parentheses included. </p>
+      <img src="5.jpg">
+      <p>After typing in the function call for makeInviteCode(), I received a response of 200 with some data within the response. Receiving the phrase made me think I was on the right track, so I expanded the data section to see what was inside. </p>
+      <img src="6.jpg">
+      <p>Within the data section I saw the phrase and an “enctype”, which I was familiar with seeing in my job. This usually stands for an encode type. I had never heard of ROT13 before, but I decided to search for a tool within Google to see if there was a tool for decoding phrases that are encoded in ROT13. </p>
+      <img src="7.jpg">
+      <p>The search within google yielded a website called Cryptii that allows you to decode ROT13 encoded messages. Copying and pasting the message, I was able to receive the plaintext “In order to generate the invite code, make a POST request to /api/invite/generate”. I wasn’t quite sure how to go about this POST request, so I searched Google for a way to implement this easily. </p>
+      <img src="8.jpg">
+      <p>I was able to find a StackOverflow article that showed me commands for making POST requests with “curl” through the command line. I decided to try using this command for the POST request, so I opened my command prompt and entered the following command:</p>
+      <img src="9.jpg">
+      <p>Then I hit “Enter” to submit the POST request.</p>
+      <img src="10.jpg">
+      <p>The response from the POST request was able to give me another code that was encoded. So, I went back to my website for ROT13 and tried entering this code to be decoded by the tool. </p>
+      <img src="11.jpg">
+      <p>When I submitted the code within Cryptii I received a plaintext result, but putting this in as the invite code did not work. So I decided to try another method of decoding the code. With some Google research on common encoding types, I found that Base64 is a common encoding method as well. So I navigated to another site that allowed me to decode the encoded code I received. </p>
+      <img src="12.jpg">
+      <img src="13.jpg">
+      <p>The result of this decoding method looked a lot more correct right off the bat. So I copied this code and entered it into the invite page for Hack the Box to see if it would work. </p>
+      <img src="14.jpg">
+      <p>The code worked for me and I was able to sign up for Hack the Box within the next page. I created an account and started searching for challenges I could complete. </p>
+      <img src="15.jpg">
+      <p>I decided to start slow with the challenges, since I am not very familiar with Hack the Box, so I chose a simple 10 point challenge called “You Can Do It!” from the Crypto category and downloaded the file. When I extracted the file, I entered the password that was given within the challenge information, “hackthebox”. </p>
+      <img src="16.jpg">
+      <p>When I opened the file, I was presented with a string of what seemed like random letters. To me, it seemed pretty straightforward that these letters could form the flag for the challenge, so I did a little research on Google to see exactly what the nature of this set of letters was. I found that it was probably an anagram, so I decided to use the text file to try to solve the anagram. </p>
+      <img src="17.jpg">
+      <p>I started out by spacing out the letters so I could see them more clearly. Once I spaced them out, I was able to notice that the same characters within the title of the challenge appeared within the anagram, so I went ahead and separated out the letters into the phrase “YOU CAN DO IT” and deleted these letters from the original set of letters, so I could see what was left. </p>
+      <img src="18.jpg">
+      <p>I originally tried “SAY YOU CAN DO IT”, but the letters that were left did not seem like they would form intelligible words, so I decided to try something else. </p>
+      <img src="19.jpg">
+      <p>The next phrase I tried was “SEE YOU CAN DO IT!”, and I saw that better letters were left for making two more words.</p>
+      <img src="20.jpg">
+      <p>I finally discovered that the anagram was “YOU SEE THAT YOU CAN DO IT!”. </p>
+      <img src="21.jpg">
+      <img src="22.jpg">
+      <p>When I entered this in as the flag in the predefined format, I received a success message at the bottom right of the screen, and I completed the challenge. This one was not too hard, but I was wondering what it had to do with hacking at all. I think that maybe anagrams are used widely as key phrases for passwords and access points. I would like to read about this further, and I’m really interested in solving more anagrams because I love puzzles!</p>
+      <img src="23.jpg">
+      <p>The next challenge I wanted to try was the Art challenge. I’m an artsy person, so it seemed pretty fun! So I downloaded and extracted the zip file and opened the art.png file that was within the folder. </p>
+      <img src="24.jpg">
+      <p>The art.png file came up as a really colorful maze picture. I had absolutely no clue what to do with this picture or how to extract data out of it, so I went to the forum page for this challenge and looked through it to try to find some sort of hint. </p>
+      <img src="25.jpg">
+      <p>I found a hint on the page that talked about using a programming language, which I thought was really strange for images. Nonetheless, I followed the user’s advice and Googled “color image programming languages”, which came up with results for a language called Piet. I clicked on the Wikipedia page and decided to learn more about this language. </p>
+      <img src="26.jpg">
+      <p>From the Wikipedia page, I was able to find that Piet is an esoteric programming language that uses colors and encode commands as changes of color between adjacent pixels. HOW COOL IS THIS! Then, I decided to Google how to execute Piet code, and I found a really cool website that would execute it for you called bertnase.de. So I navigated to this site to see what I could find. </p>
+      <img src="27.jpg">
+      <p>The site allows you to upload a .png image to execute the Piet program, so I uploaded the art.png file and clicked “Upload and execute”. </p>
+      <img src="28.jpg">
+      <p>The result gave me the entire flag with some random characters on the end. I examined the flag, and decided to enter it into the Hack the Box challenge to see if it worked, and it did! I completed the challenge and the green box on the bottom right of the page appeared. On to the next challenge!</p>
+      <p>The next challenge I decided to do was the Find the Easy Pass challenge. I downloaded the zip file within the challenge details, extracted it, and ran the executable file within the folder. A window appeared that prompted me to enter a password, so I entered “hackthebox” again and received a window that said “Wrong Password!”. Obviously, I had the wrong password, so I needed to figure out how to step through the program to see if there was any way to discover the password within the code of the executable. </p>
+      <img src="29.jpg">
+      <p>After a Google search, I found a really cool debugger called OllyDbg that would allow me to load up the program and debug it on my desktop. I downloaded this tool from the site and opened it, and then I opened the Easy Pass executable file within the debugger to examine the code. </p>
+      <img src="30.jpg">
+      <img src="31.jpg">
+      <p>It was hard to know where to start, but I wanted to see what happened within the code when I entered an incorrect password. First, I executed the code within the debugger to see what happened when I entered an incorrect password. I didn’t get much from this attempt. After clicking around for a while, I right clicked and decided to examine the relevant strings within the code like we did within our labs that used debuggers. </p>
+      <img src="32.jpg">
+      <p>With this view, I was able to find the area where the code output the “Wrong Password”. I double clicked this message, which brought me to a view that showed me the machine instructions associated with this output. </p>
+      <img src="33.jpg">
+      <p>Looking at the machine instructions, I found a bunch of calls and a JMZ, which I know from our assembly language class is equivalent to “jump if not equal”. I decided to set some breakpoints here and execute the file again to look at the contents of the registers when this happened. </p>
+      <img src="34.jpg">
+      <p>After setting breakpoints, I was able to execute the file and enter a password in the window to see what occurred within the registers and if they would give me a hint as to the password. </p>
+      <img src="35.jpg">
+      <p>I entered “hack the box” again and hit enter to see what occurred within the registers. </p>
+      <img src="36.jpg">
+      <p>Within the registers I could see another value within the EDX register that was “fortran!”. I theorized that this was probably the password that the program was checking if my input was equal to, so I decided to execute the program again using this password to see if it was correct. </p>
+      <img src="37.jpg">
+      <img src="38.jpg">
+      <p>Upon entering the password, I received a “Good Job. Congratulations” message, which indicated that the password was indeed correct. I still had to enter the flag into the Hack the Box challenge, however, so I entered HTB{fortran!} into the challenge flag field, and it was correct! I was done with the challenges!</p>
+      <img src="39.jpg">
+      <img src="40.jpg">
+      <img src="41.jpg">
+      <img src="42.jpg">
+      <p>While these challenges were fun, they were pretty difficult, especially with so little instructions. It looks like there is a whole community out there for people who enjoy solving these problems, and it was really helpful that they had posted some hints within the forum page. Without using Google, I have no idea how I would complete these challenges. It seems the material we learned within the course this quarter does not even begin to cover all kinds of cybersecurity. My favorite challenge was the Art challenge because I learned about a programming language I didn’t know even existed! I think it’s fascinating that text could be encoded in images, and I’m really interested in looking into this in the future for fun. I think this activity was a great way to show us that the cybersecurity field is much broader than we covered within the course and that there is more information to be discovered, so we should keep learning! I will definitely try to solve more challenges on Hack the Box when I graduate. It’s actually pretty fun, and I learned a lot from completing the challenges!</p>
+ </div>
+  </div>
+</div>
+<div class="w3-col l4">
+  <div class="w3-card w3-margin w3-margin-top">
+    <div class="w3-container w3-white">
+      <h4><b>Alexandra Carper</b></h4>
+      <p>This page was created for Weekly Writeups for Defense Against the Dark Arts</p>
+    </div>
+  </div>
+ 
+  
+
+</div>
+
+</div><br>
+
+</div>
+
+<footer>
+</footer>
+
+</body>
+</html>
