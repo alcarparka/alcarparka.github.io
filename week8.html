@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<title>Defense Against the Dark Arts Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<div class="w3-content" style="max-width:1400px">
+
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>Week 8 Write Up</b></h1>
+  <p>Welcome to the page of <span class="w3-tag">Alexandra Carper</span></p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <hr>
+
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <div class="w3-container">
+      <h3><b>Homework Write Up</b></h3>
+    </div>
+
+    <div class="w3-container">
+      <p></p>
+      
+<div class="w3-container">
+      <h5>Week 8 <span class="w3-opacity">August 15, 2019</span></h5>
+      <p>	The topic of this week’s materials was email security, specifically the terms, tools, and technologies for email security and how to explore the data at your fingertips. The first activity within the materials was a phishing quiz, which was an exercise in classification. The quiz allowed participants to classify emails as ham (legitimate) or spam, and it was provided by the McAfee website. McAfee philosophically takes the standpoint that blocking legitimate email is worse than letting spam through, which means that false positives should be absolutely minimal. From the activity, it was learned that generally with any phish there is going to be a call to action, and we reviewed spear phishing, which is targeted for individuals within an organization for a specific purpose. It was surprising to learn that 80% is about the standard for a Human Resources person to be the victim of phishing. This made me curious about my own company and how vulnerable our HR people are to phishing attacks.</p>
+      <p>	There were quite a few terms presented in terms of messaging security this week, including spam/ham, spamtrap/honeypot, botnet, snowshoe spam, phishing and spear phishing, RBL, heuristics, Bayesian filtering, and fingerprinting/hashing. Spam and ham refer to illegitimate and legitimate emails respectively. Spamtraps and honeypots are computers or computer systems that are intended to mimic likely targets of cyberattacks, or more specifically domains or addresses that receive only spam messages, with no legitimate mail being sent to that location. It is safe to assume that any mail that is sent to these domains and addresses is, in fact, spam. Botnets, as we learned in previous lectures, are a series of machines that have been taken over that the end user doesn’t support the end goal. They are used for spamming and directory harvest attacks, and the most common botnet family is called Zeus. Snowshoe spam refers to a spamming technique that spreads the load over many IP addresses. This is visually represented by a trickle over time, but it is hard to detect. Attackers usually use this method in an attempt to get around IP reputation filters. Phishing and spear phishing were covered in previous lectures, but we discussed how these techniques can be performed in large numbers without an infrastructure, and it was mentioned that attackers can make a lot of money through abusing email. The Anthem data breach is an example of a spear phishing attack in which the attacker spoofed an email reply and injected themselves into a conversation. RBL refers to a Real-Time Blackhole List, which is a dynamic list of IP address owners that are active spammers or spam sources. This may include Internet service providers (ISPs) with customers that are known spammers or ISP servers that have been hijacked. While we have also covered heuristics in previous lectures, the different methods of using heuristics for message security were discussed, such as YARA rules, string matching a subject line, regular expressions, and meta rules, which combine the features of email into a single definition (contains URL, contains image, contains attachment, etc.). Bayesian filtering refers to a method in which, for a given set of samples ham or spam, we can take a corpus of each and tokenize them. We can then calculate the prevalence of each token and use the weights to justify what future messages are. Fingerprinting and hashing refers to using the cryptographic hash to pick out the unique fingerprint of some data. </p>
+      <p>	There were a few examples presented in terms of classic phishing as well. For example, 419 phishing refers to a specific classification of phishing that is considered criminal. The number 419 is literally the criminal code related to this activity. This phishing attempt typically is presented as an email from a prince or princess asking for personal information in an offer to give someone money. The attempt is so successful because it plays on people’s desire for a quick fix for their money problems. Another example is the Canadian Pharmacy phishing attack, which has been spammed more widely across the Internet than any other campaign. The name is descriptive of the method, presenting the end user with what they think is a Canadian pharmacy, and the letters are usually embedded within spam tags. A final example of a classic phishing example is called a “Pump ‘n Dump”, which is artificially inflating the value of a stock by sending spam messages out to end users. The spammers usually send out a notification with an “insider tip”, which drives up the value of the stock. The spammers then dump the stock and make money off of their efforts. Target Corporation is a real-world example of a target of this method. </p>
+      <img src="Spam Botnet Activity.jpg">
+      <p>	From the graph presented above, we are able to see some of the history behind spamming. The graph is volume-driven, tracking metrics since 2009. The first part of the graph is representative of the Canadian Pharmacy heyday and a botnet called Rustock. The end of the graph is representative of the Kelihos botnet, which sold everything from Rolexes to Russian brides to pills. We can see at the end of the graph that this botnet went silent toward the end of 2015. </p>
+      <p>	The technology and tools behind network security can be broken down into two categories: reputation-driven and content-driven. Reputation-driven technology covers IP addresses, messages, and URLs, while content-driven technology uses common strings, fixed strings and variable strings (regular expressions), message attributes, and combinations of strings and attributes (metarules). The tools that we covered for messaging security research can be broken down into Linux tools, open-source databases, the Regex Coach, Trustedsource.org, and Spamhaus.org. Linux tools include DIG, which is a domain information groper used to investigate DNS records, WHOIS, which is used to search for IP/Domain registration information, and the grep, sed, and awk commands to perform data parsing and manipulation. The open-source databases that can be used for research are PostgreSQL, which is considered the world’s most advanced open source database, and MySQL, which is the world’s most popular open source database. The Regex Coach is a very cool tool to test regular expression syntax and functionality (although I much prefer using regexr.com). Trustedsource.org contains historical and current reputations based on McAfee data, and spamhaus.org is widely accepted as the authoritative source of reputation data, specifically with IP reputations for mail. </p>
+      <p>	With DIG we can look at MX records (mail exchange records) and the DNS record that points the domain.com at an IP address. Visually, we can see an answer section, which contains MX records with priorities, and these records point to the IP address of a machine. WHOIS is registered by MarkMonitor, using IANA ID for registration, contacts, etc. This tool is typically applied in postprocessing of data. </p>
+      <p>	The research techniques that are usually applied to messaging security are parsing, grouping, aggregation, and identification of outliers. Parsing refers to extracting interesting bits from messages, such as the source IP, subject, etc., and these bits are referred to as “key meta data”. Grouping refers to taking time slices of data and filtering by timestamp, source IP, subject, URL, or other common elements. With this technique our objective is to group things logically and detect spam on the fly. In aggregation, count distinct refers to telling you how many distinct subject lines there are, and aggregation can give us relevant research paths of blocking spam and allowing ham. Identification of outliers refers to investigating why something is marked as spam most times, but the same thing is not marked as spam a few times. Subsequently, we would want to investigate this further and find out why spam is slipping through the cracks.</p>
+      <p>	There are many things to consider when applying research techniques. For example, we must think about how much human input is required and what level of scalability we can achieve. In addition, we need to understand the value of human input versus machine input, for example, considering the accuracy of YARA rules versus the accuracy of a human writing a full driver for a sample of spam. We also need to know if we can fully automate, what the initial human cost of that automation will be, and the fault tolerance and resiliency in terms of accuracy. We can consider machine learning techniques when performing security research, using a combination of automation and human input for supervised learning. Two new terms that were presented were probability scoring and additive scoring, which refers to adding a certain amount of points to get over the threshold and have something classified as spam. The difference between the two are the pointing systems, with probability scoring being on a zero to one scale and additive scoring not. </p>
+      <img src="SMTP Conversation - Ham.jpg">
+      <p>	Next, we took a look at some SMTP conversation examples. Emails can be sent easily with a service such as Telnet, and port 25 is the most common port for email, which is the SMTP port. The picture above displays a banner provided by the recipient MTA, Rcpt to designated the recipient address, the data of the message itself, and a quit that end the conversation. The 200 response indicates an OK message, the 400 response indicates temporary failures, and the 500 response indicates a permanent failure. The SMTP protocol is not designed for security, which makes it vulnerable to attacks. </p>
+      <img src="Email Header Reading.jpg">
+      <p>	The email header above is meant to be read from the bottom up. There is a friendly from within the header, which displays the person’s name next to the actual email address it was sent from. There is a received field, a sender field, and a timestamp field within this header. There is a lot of information that can be gathered from email headers, which can be used for messaging security research.</p>
+      <img src="Sample Spam Message.jpg">
+      <p>	When performing messaging security research, it is important to be able to describe a message with simple observations. For example, the email above has an empty “To:” line, it is from a Russian domain that points to a php file, it originates from the Czech Republic, and it is sent from a Yahoo mail address, but the exclamation in “Yahoo” is missing, which is a good indicator of this being spam. In addition, there are no attachments, it is an HTML email, there are two URLs, it is very short, and it was sent at 5 am. Even these simple observations can give a researcher a good indication of what stands out about the email for spam classification. </p>
+      <p>	Within the classification lab this week, we used the tools and techniques that were covered to make spam/ham decisions for all 100,00 records of real-world message meta data. A good strategy was grabbing the top subject and IPs, isolating them down into subset that are spam only, and running a query to mark these emails as spam. The class’s lab results had top performing queries that reached an average of 70,000 queries classifying spam. These queries typically used an attachment hash as an effective method of picking out the spam messages from the data. Regular expressions were also a very effective way of reaching a high number of queries for classification, as well as following source IPs that sent stock pick spam to design an effective query. Useful operators in PostgreSQL included the COUNT() operator, DISTINCT(), SPLIT_PART(), GROUP BY $col, and ORDER BY $col. One way of querying to classify by subject line was to use the UPDATE message_data SET is_spam = ‘x’ WHERE subject ~ E’regex’ query, and the good way to classify by source IP was using the UPDATE message_data SET is_spam = ‘x’ WHERE source IP in (‘1.2.3.4’, ‘5.6.7.8’) query.</p>
+      <p>	In conclusion, spam is pervasive, as it can even be found within digital and printed media. Many aspects of messaging security can be explained simply as finding the least common denominator among large data sets, like finding a needle in a haystack. Classification accuracy is directly tied to the depth in which we are able to investigate and describe spam samples, and educating yourself and others is key to protecting against spam attacks. </p>
+  Screenshots from the materials this week are included in the following zip file: <a href="/Screenshots8.zip" download>Screenshots Week 8</a></p>
+
+ </div>
+  </div>
+</div>
+<div class="w3-col l4">
+  <div class="w3-card w3-margin w3-margin-top">
+    <div class="w3-container w3-white">
+      <h4><b>Alexandra Carper</b></h4>
+      <p>This page was created for Weekly Writeups for Defense Against the Dark Arts</p>
+    </div>
+  </div>
+ 
+  
+
+</div>
+
+</div><br>
+
+</div>
+
+<footer>
+</footer>
+
+</body>
+</html>
